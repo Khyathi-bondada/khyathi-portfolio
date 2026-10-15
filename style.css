@@ -1,9 +1,8 @@
-/* ========================================
-   KHYATI BONDADA - ECE PORTFOLIO
-   Clean White and Purple Theme
-======================================== */
+/* =========================================
+   KHYATI BONDADA - ENGINEERING PORTFOLIO
+   White and Purple Professional Theme
+========================================= */
 
-/* Theme variables */
 :root {
     --primary: #7155d9;
     --primary-dark: #5138b5;
@@ -15,7 +14,8 @@
     --shadow: 0 8px 25px rgba(35, 28, 70, 0.06);
 }
 
-/* Reset */
+/* RESET */
+
 * {
     margin: 0;
     padding: 0;
@@ -39,9 +39,7 @@ img {
     max-width: 100%;
 }
 
-/* ========================================
-   NAVIGATION
-======================================== */
+/* NAVIGATION */
 
 .header {
     position: sticky;
@@ -73,7 +71,7 @@ img {
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 17px;
+    gap: 12px 17px;
     list-style: none;
 }
 
@@ -88,9 +86,7 @@ img {
     color: var(--primary);
 }
 
-/* ========================================
-   HOME / HERO SECTION
-======================================== */
+/* HOME / HERO */
 
 .hero {
     max-width: 1180px;
@@ -127,7 +123,7 @@ img {
     margin-bottom: 16px;
 }
 
-.hero-content > p:not(.eyebrow) {
+.hero-description {
     max-width: 620px;
     color: var(--muted);
 }
@@ -139,7 +135,7 @@ img {
     margin-top: 28px;
 }
 
-/* Buttons */
+/* BUTTONS */
 
 .btn {
     display: inline-block;
@@ -167,30 +163,29 @@ img {
     color: #ffffff;
 }
 
-/* ========================================
-   PROFILE PHOTO
-======================================== */
+/* PROFILE PHOTO */
 
 .hero-image {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.profile-placeholder {
+.profile-frame {
     width: 310px;
     height: 310px;
     max-width: 75vw;
     max-height: 75vw;
-    border-radius: 50%;
+    padding: 6px;
     overflow: hidden;
     border: 5px solid var(--primary);
-    padding: 6px;
+    border-radius: 50%;
     background: #ffffff;
     box-shadow: 0 18px 45px rgba(78, 56, 150, 0.15);
 }
 
-.profile-placeholder img {
+.profile-frame img {
     display: block;
     width: 100%;
     height: 100%;
@@ -199,16 +194,21 @@ img {
     border-radius: 50%;
 }
 
-/* ========================================
-   GENERAL SECTIONS
-======================================== */
+.photo-caption {
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* GENERAL SECTIONS */
 
 .section {
     padding: 82px 24px;
-    scroll-margin-top: 75px;
+    scroll-margin-top: 85px;
 }
 
-.section:nth-of-type(even) {
+.section-soft {
     background: var(--soft);
 }
 
@@ -224,13 +224,13 @@ img {
     margin-bottom: 12px;
 }
 
-.section-heading > p:not(.eyebrow) {
+.section-intro {
+    max-width: 650px;
+    margin: 0 auto;
     color: var(--muted);
 }
 
-/* ========================================
-   ABOUT SECTION
-======================================== */
+/* ABOUT */
 
 .about-content {
     max-width: 850px;
@@ -242,7 +242,7 @@ img {
     margin-bottom: 15px;
 }
 
-/* Statistics */
+/* STATISTICS */
 
 .stats {
     max-width: 850px;
@@ -258,6 +258,7 @@ img {
     border: 1px solid var(--border);
     border-radius: 12px;
     text-align: center;
+    box-shadow: var(--shadow);
 }
 
 .stat-card h3 {
@@ -271,9 +272,7 @@ img {
     font-size: 13px;
 }
 
-/* ========================================
-   EDUCATION, SKILLS AND CONTENT CARDS
-======================================== */
+/* CARD GRID */
 
 .card-grid {
     max-width: 1080px;
@@ -286,14 +285,12 @@ img {
 .info-card,
 .project-card {
     min-width: 0;
+    padding: 26px;
     background: #ffffff;
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 26px;
     box-shadow: var(--shadow);
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .info-card:hover,
@@ -304,15 +301,15 @@ img {
 
 .info-card h3,
 .project-card h3 {
+    margin-bottom: 12px;
     font-size: 19px;
     line-height: 1.45;
-    margin-bottom: 12px;
 }
 
 .info-card p,
 .project-card p {
-    color: var(--muted);
     margin-bottom: 9px;
+    color: var(--muted);
 }
 
 .card-label {
@@ -322,14 +319,16 @@ img {
     letter-spacing: 1.5px;
 }
 
+.institution {
+    font-weight: 600;
+}
+
 .highlight {
     color: var(--primary) !important;
     font-weight: 800;
 }
 
-/* ========================================
-   SKILL AND PROJECT TAGS
-======================================== */
+/* SKILL AND PROJECT TAGS */
 
 .tags {
     display: flex;
@@ -355,20 +354,53 @@ img {
     font-size: 13px;
 }
 
-/* ========================================
-   EXPERIENCE AND LEADERSHIP
-======================================== */
+/* CERTIFICATIONS */
 
-.experience-card,
-#leadership > .info-card {
-    max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
+.certificate-card {
+    position: relative;
+    overflow: hidden;
+    padding-top: 30px;
 }
 
-/* ========================================
-   CONTACT SECTION
-======================================== */
+.card-icon {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 18px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #f0edff;
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.certificate-card h3 {
+    color: var(--text);
+}
+
+.certificate-type {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--primary-dark);
+    background: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* EXPERIENCE AND LEADERSHIP */
+
+.experience-card,
+.leadership-card {
+    max-width: 1080px;
+    margin: auto;
+}
+
+/* CONTACT */
 
 .contact-card {
     max-width: 650px;
@@ -380,23 +412,39 @@ img {
     box-shadow: var(--shadow);
 }
 
-.contact-card p {
-    margin: 12px 0;
+.contact-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.contact-item a {
+    color: var(--primary);
+    font-weight: 600;
     overflow-wrap: anywhere;
 }
 
-.contact-card a {
-    color: var(--primary);
-    font-weight: 600;
-}
-
-.contact-card a:hover {
+.contact-item a:hover {
     text-decoration: underline;
 }
 
-/* ========================================
-   FOOTER
-======================================== */
+.contact-item .small-note {
+    margin: 5px 0 0;
+}
+
+/* FOOTER */
 
 .footer {
     padding: 25px 20px;
@@ -407,9 +455,7 @@ img {
     font-size: 13px;
 }
 
-/* ========================================
-   TABLET RESPONSIVE DESIGN
-======================================== */
+/* TABLET RESPONSIVENESS */
 
 @media (max-width: 900px) {
     .navbar {
@@ -424,12 +470,16 @@ img {
 
     .hero {
         grid-template-columns: 1fr;
-        text-align: center;
+        gap: 35px;
         padding-top: 55px;
-        gap: 38px;
+        text-align: center;
     }
 
-    .hero-content > p:not(.eyebrow) {
+    .hero-image {
+        grid-row: 1;
+    }
+
+    .hero-description {
         margin-left: auto;
         margin-right: auto;
     }
@@ -437,15 +487,9 @@ img {
     .hero-buttons {
         justify-content: center;
     }
-
-    .hero-image {
-        grid-row: 1;
-    }
 }
 
-/* ========================================
-   MOBILE RESPONSIVE DESIGN
-======================================== */
+/* MOBILE RESPONSIVENESS */
 
 @media (max-width: 600px) {
     .navbar {
@@ -473,7 +517,7 @@ img {
         font-size: 20px;
     }
 
-    .profile-placeholder {
+    .profile-frame {
         width: 260px;
         height: 260px;
     }
@@ -497,7 +541,7 @@ img {
     }
 
     .contact-card {
-        padding: 22px;
+        padding: 20px;
     }
 
     .hero-buttons .btn {
@@ -506,9 +550,7 @@ img {
     }
 }
 
-/* ========================================
-   ACCESSIBILITY
-======================================== */
+/* ACCESSIBILITY */
 
 a:focus-visible {
     outline: 3px solid #a899f5;
@@ -521,6 +563,5 @@ a:focus-visible {
     *::after {
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
     }
 }
