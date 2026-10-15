@@ -3,112 +3,324 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Khyathi | ECE Portfolio</title>
-  <meta name="description" content="Electronics and Communication Engineering student portfolio">
+  <meta name="description" content="Portfolio of an Electronics and Communication Engineering student aspiring to become a VLSI engineer.">
+  <title>Khyathi | ECE & VLSI Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
   <header class="navbar">
-    <a class="logo" href="#home">Khyathi<span>.</span></a>
+    <a href="#home" class="logo">Khyathi<span>.</span></a>
+
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
+      <a href="#education">Education</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
+    <!-- HOME -->
     <section id="home" class="hero">
-      <div class="hero-text">
+      <div class="hero-content">
         <p class="eyebrow">ELECTRONICS & COMMUNICATION ENGINEERING</p>
+
         <h1>Hello, I'm <span>Khyathi</span></h1>
+
         <h2>ECE Student | Aspiring VLSI Engineer</h2>
-        <p>I enjoy learning digital electronics, Verilog, embedded systems and building projects that solve real-world problems.</p>
-        <a class="button" href="#projects">Explore My Projects</a>
+
+        <p class="hero-text">
+          Passionate about electronics, digital design and embedded systems.
+          I enjoy learning new technologies and turning ideas into practical
+          engineering solutions.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn primary">Explore My Work</a>
+          <a href="#contact" class="btn secondary">Contact Me</a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/Khyathi-bondada"
+             target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+
+          <a href="https://www.linkedin.com/"
+             target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+
+          <a href="mailto:YOUR_EMAIL@example.com">Email ↗</a>
+        </div>
       </div>
-      <div class="profile-placeholder">
-        <div class="initials">BK</div>
-        <p>Add your photo in a later step</p>
+
+      <div class="hero-card">
+        <div class="profile-circle">K</div>
+        <h3>Future Engineer</h3>
+        <p>Learn. Design. Build. Improve.</p>
+        <div class="mini-tags">
+          <span>VLSI</span>
+          <span>Embedded</span>
+          <span>ECE</span>
+        </div>
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="section">
-      <p class="eyebrow">GET TO KNOW ME</p>
-      <h2>About Me</h2>
-      <p>I am an Electronics and Communication Engineering student at Lendi Institute of Engineering and Technology, expected to graduate in 2028. I am developing my skills in C programming, Verilog, digital electronics and embedded systems.</p>
-      <div class="info-grid">
-        <div class="info-card"><strong>Education</strong><p>B.Tech in ECE</p></div>
-        <div class="info-card"><strong>College</strong><p>Lendi Institute of Engineering and Technology</p></div>
-        <div class="info-card"><strong>CGPA</strong><p>8.5</p></div>
-        <div class="info-card"><strong>Learning</strong><p>Digital Design and VLSI</p></div>
+      <p class="section-label">GET TO KNOW ME</p>
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about-card">
+        <p>
+          I am an Electronics and Communication Engineering student at
+          Lendi Institute of Engineering and Technology, with an interest
+          in VLSI design, digital electronics and embedded systems.
+        </p>
+
+        <p>
+          I am building my technical knowledge through academic projects,
+          practical training, certifications and hands-on learning.
+          My goal is to develop reliable, efficient and meaningful
+          engineering solutions while continuously improving my skills.
+        </p>
       </div>
     </section>
 
+    <!-- EDUCATION -->
+    <section id="education" class="section alternate">
+      <p class="section-label">MY ACADEMIC JOURNEY</p>
+      <h2 class="section-title">Education</h2>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <span class="card-number">01</span>
+          <h3>B.Tech – Electronics and Communication Engineering</h3>
+          <p>Lendi Institute of Engineering and Technology</p>
+          <p class="muted">Currently pursuing 3rd year</p>
+          <p class="muted">Expected graduation: [Add year]</p>
+        </article>
+
+        <article class="info-card">
+          <span class="card-number">02</span>
+          <h3>Diploma</h3>
+          <p>Andhra Polytechnic, Kakinada</p>
+          <p class="muted">Branch: [Add diploma branch]</p>
+          <p class="muted">Graduation year: [Add year]</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
     <section id="skills" class="section">
-      <p class="eyebrow">WHAT I'M LEARNING</p>
-      <h2>Technical Skills</h2>
-      <div class="skill-list">
-        <span>C Programming</span>
-        <span>Verilog HDL</span>
-        <span>Digital Electronics</span>
-        <span>Embedded Systems</span>
-        <span>MATLAB</span>
-        <span>Vivado</span>
+      <p class="section-label">WHAT I AM LEARNING</p>
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>VLSI & Digital Design</h3>
+          <div class="skill-tags">
+            <span>Verilog HDL</span>
+            <span>Digital Logic Design</span>
+            <span>Combinational Circuits</span>
+            <span>Sequential Circuits</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Embedded Systems</h3>
+          <div class="skill-tags">
+            <span>Arduino</span>
+            <span>ESP32</span>
+            <span>STM32</span>
+            <span>Sensor Interfacing</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Tools & Programming</h3>
+          <div class="skill-tags">
+            <span>Linux</span>
+            <span>STM32CubeIDE</span>
+            <span>[Add HDL Tool]</span>
+            <span>[Add Programming Language]</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Professional Skills</h3>
+          <div class="skill-tags">
+            <span>Problem Solving</span>
+            <span>Teamwork</span>
+            <span>Communication</span>
+            <span>Continuous Learning</span>
+          </div>
+        </div>
+      </div>
+      <p class="note">
+        Keep only the skills you have learned or can explain in an interview.
+      </p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section alternate">
+      <p class="section-label">PRACTICAL LEARNING</p>
+      <h2 class="section-title">Projects</h2>
+
+      <div class="card-grid">
+        <article class="project-card">
+          <div class="project-icon">01</div>
+          <h3>Smart Water Quality Monitoring System</h3>
+          <p>
+            An embedded-system concept for monitoring selected water-quality
+            parameters using sensors and a microcontroller, with the aim of
+            identifying water-quality changes.
+          </p>
+          <div class="skill-tags">
+            <span>ESP32</span>
+            <span>Sensors</span>
+            <span>IoT</span>
+          </div>
+          <p class="muted">Update with your actual implementation and results.</p>
+        </article>
+
+        <article class="project-card">
+          <div class="project-icon">02</div>
+          <h3>Electronic Nose for Storage Monitoring</h3>
+          <p>
+            A sensor-based project concept to detect changes in storage
+            environments and indicate possible spoilage-related odour changes.
+          </p>
+          <div class="skill-tags">
+            <span>Gas Sensors</span>
+            <span>Embedded Systems</span>
+            <span>Monitoring</span>
+          </div>
+          <p class="muted">Update with the sensors and features you actually used.</p>
+        </article>
+
+        <article class="project-card">
+          <div class="project-icon">03</div>
+          <h3>Smart Agarbatti Drying and Packaging</h3>
+          <p>
+            A solar-powered system concept for monitoring drying conditions
+            and supporting weight-based agarbatti packaging for small producers.
+          </p>
+          <div class="skill-tags">
+            <span>Solar Energy</span>
+            <span>Sensors</span>
+            <span>Automation</span>
+          </div>
+          <p class="muted">Describe your prototype status accurately.</p>
+        </article>
       </div>
     </section>
 
-    <section id="projects" class="section">
-      <p class="eyebrow">MY WORK</p>
-      <h2>Featured Projects</h2>
-      <p class="section-intro">Project photos, demonstrations and live data will be added as each project is ready.</p>
-      <div class="project-grid">
-        <article class="project-card">
-          <div class="project-image">PROJECT 01</div>
-          <div class="project-content">
-            <h3>JalRakshak 2.0</h3>
-            <p>A water-monitoring concept using sensors and ESP32, with a plan for remote monitoring and alerts.</p>
-            <span class="tag">ESP32 · IoT · LoRa</span>
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section">
+      <p class="section-label">MILESTONES & EXPERIENCE</p>
+      <h2 class="section-title">Achievements</h2>
+
+      <div class="achievement-list">
+        <article class="achievement-item">
+          <div class="achievement-mark">✓</div>
+          <div>
+            <h3>NPTEL Elite Certificate</h3>
+            <p>Academic learning and certification.</p>
           </div>
         </article>
-        <article class="project-card">
-          <div class="project-image">PROJECT 02</div>
-          <div class="project-content">
-            <h3>CardioShield</h3>
-            <p>A prototype concept for monitoring heart rate and sending an alert when readings cross configured limits.</p>
-            <span class="tag">Arduino · Sensors · GPS</span>
+
+        <article class="achievement-item">
+          <div class="achievement-mark">✓</div>
+          <div>
+            <h3>EduSkills – Cohort 17</h3>
+            <p>Outstanding grade, as awarded in the program.</p>
           </div>
         </article>
-        <article class="project-card">
-          <div class="project-image">PROJECT 03</div>
-          <div class="project-content">
-            <h3>Women and Child Safety</h3>
-            <p>A GPS-based safety project concept designed to help share a user's location during an emergency.</p>
-            <span class="tag">GPS · Embedded Systems</span>
+
+        <article class="achievement-item">
+          <div class="achievement-mark">✓</div>
+          <div>
+            <h3>Industrial Training</h3>
+            <p>
+              Six months of industrial training at Axiom Energy Conversion
+              Ltd., Hyderabad.
+            </p>
           </div>
         </article>
-        <article class="project-card">
-          <div class="project-image">PROJECT 04</div>
-          <div class="project-content">
-            <h3>Footstep Power Generation</h3>
-            <p>A prototype exploring how piezoelectric sensors can convert pressure from footsteps into electrical energy.</p>
-            <span class="tag">Piezoelectric Sensors</span>
+
+        <article class="achievement-item">
+          <div class="achievement-mark">✓</div>
+          <div>
+            <h3>School-Level Service Robot Project</h3>
+            <p>
+              Developed a service robot project in 8th class and received
+              appreciation from Krishna Das.
+            </p>
+          </div>
+        </article>
+
+        <article class="achievement-item">
+          <div class="achievement-mark">✓</div>
+          <div>
+            <h3>Industrial Visits</h3>
+            <p>Exposure to industry through 4–5 industrial visits.</p>
           </div>
         </article>
       </div>
+
+      <p class="note">
+        Verify certificate titles, training duration and appreciation details
+        before publishing.
+      </p>
     </section>
 
-    <section id="contact" class="section contact">
-      <p class="eyebrow">LET'S CONNECT</p>
-      <h2>Contact Me</h2>
-      <p>Interested in my projects or learning journey? You can add your professional contact links here.</p>
-      <p class="contact-note">Email and professional profile links will be added after you provide the details you want to share.</p>
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+      <p class="section-label">LET'S CONNECT</p>
+      <h2 class="section-title">Contact Me</h2>
+
+      <p class="contact-intro">
+        I am interested in learning opportunities, internships and
+        entry-level opportunities related to electronics, embedded systems
+        and VLSI design.
+      </p>
+
+      <div class="contact-grid">
+        <a class="contact-card" href="mailto:YOUR_EMAIL@example.com">
+          <span>Email</span>
+          <strong>Send me an email ↗</strong>
+        </a>
+
+        <a class="contact-card"
+           href="https://www.linkedin.com/"
+           target="_blank" rel="noopener noreferrer">
+          <span>LinkedIn</span>
+          <strong>Connect professionally ↗</strong>
+        </a>
+
+        <a class="contact-card"
+           href="https://github.com/Khyathi-bondada"
+           target="_blank" rel="noopener noreferrer">
+          <span>GitHub</span>
+          <strong>Explore my repositories ↗</strong>
+        </a>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>Designed by Khyathi | ECE Portfolio</p>
+  <footer class="footer">
+    <p>Designed with purpose by Khyathi.</p>
+    <p>© <span id="year"></span> | Electronics & Communication Engineering</p>
+    <a href="#home">Back to top ↑</a>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
 </body>
 </html>
