@@ -4,548 +4,689 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Khyati Bondada | ECE Portfolio</title>
+    <title>Khyati Bondada | ECE Engineer Portfolio</title>
+    <meta name="description" content="Portfolio of Khyati Bondada, Electronics and Communication Engineering student interested in embedded systems, IoT and VLSI.">
 
-    <meta name="description"
-          content="Portfolio of Khyati Bondada, Electronics and Communication Engineering student interested in electronics, embedded systems, and practical engineering solutions.">
+    <style>
+        :root {
+            --primary: #7155d9;
+            --primary-dark: #5138b5;
+            --text: #202235;
+            --muted: #626779;
+            --background: #ffffff;
+            --soft: #f7f6fc;
+            --border: #e8e5f1;
+        }
 
-    <meta name="author" content="Khyati Bondada">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            max-width: 1180px;
+            margin: auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 17px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--muted);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            max-width: 1180px;
+            min-height: 590px;
+            margin: auto;
+            padding: 80px 24px;
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .eyebrow {
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 5vw, 60px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: var(--primary);
+        }
+
+        .hero h2 {
+            font-size: 23px;
+            margin-bottom: 16px;
+        }
+
+        .hero-content > p:not(.eyebrow) {
+            color: var(--muted);
+            max-width: 620px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 21px;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            background: var(--primary);
+            color: white;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            color: white;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-placeholder {
+            width: min(310px, 75vw);
+            height: min(310px, 75vw);
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--primary);
+            padding: 6px;
+            background: white;
+            box-shadow: 0 18px 45px rgba(78, 56, 150, 0.15);
+        }
+
+        .profile-placeholder img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+        }
+
+        .section {
+            padding: 82px 24px;
+            scroll-margin-top: 75px;
+        }
+
+        .section:nth-of-type(even) {
+            background: var(--soft);
+        }
+
+        .section-heading {
+            max-width: 780px;
+            margin: 0 auto 38px;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .section-heading > p:not(.eyebrow) {
+            color: var(--muted);
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            color: var(--muted);
+        }
+
+        .about-content p {
+            margin-bottom: 15px;
+        }
+
+        .stats {
+            max-width: 850px;
+            margin: 35px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .stat-card {
+            padding: 24px 12px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            color: var(--primary);
+            font-size: 25px;
+        }
+
+        .stat-card p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .card-grid {
+            max-width: 1080px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .info-card,
+        .project-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 26px;
+            box-shadow: 0 7px 24px rgba(35, 28, 70, 0.035);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .info-card:hover,
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(35, 28, 70, 0.08);
+        }
+
+        .info-card h3,
+        .project-card h3 {
+            font-size: 19px;
+            line-height: 1.45;
+            margin-bottom: 12px;
+        }
+
+        .info-card p,
+        .project-card p {
+            color: var(--muted);
+            margin-bottom: 9px;
+        }
+
+        .card-label {
+            color: var(--primary) !important;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .highlight {
+            color: var(--primary) !important;
+            font-weight: 800;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 17px;
+        }
+
+        .tags span {
+            display: inline-block;
+            background: #f0edff;
+            color: #5540a8;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .small-note {
+            max-width: 1080px;
+            margin: 20px auto 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .experience-card,
+        #leadership > .info-card {
+            max-width: 1080px;
+            margin: auto;
+        }
+
+        .contact-card {
+            max-width: 650px;
+            margin: auto;
+            padding: 28px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
+
+        .contact-card p {
+            margin: 12px 0;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            padding: 25px 20px;
+            text-align: center;
+            color: var(--muted);
+            background: white;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+        }
+
+        @media (max-width: 900px) {
+            .navbar {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: flex-start;
+                gap: 12px 16px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 55px;
+                gap: 38px;
+            }
+
+            .hero-content > p:not(.eyebrow) {
+                margin: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                grid-row: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .section {
+                padding: 58px 18px;
+            }
+
+            .navbar {
+                padding: 12px 18px;
+            }
+
+            .nav-links {
+                gap: 10px 13px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 45px 20px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .section-heading h2 {
+                font-size: 29px;
+            }
+
+            .card-grid,
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .info-card,
+            .project-card {
+                padding: 22px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
-    <header>
-        <nav class="nav-container" aria-label="Main navigation">
-            <a href="#home" class="logo">Khyati<span>.</span></a>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="#home" class="logo">KB.</a>
 
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#education">Education</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#achievements">Achievements</a>
-                <a href="#certifications">Certifications</a>
-                <a href="#leadership">Leadership</a>
-                <a href="#contact" class="nav-contact">Contact</a>
-            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
 
-        <!-- HOME -->
-        <section class="hero" id="home">
-            <div class="container hero-grid">
-                <div class="hero-content">
-                    <div class="hero-tag">
-                        Electronics and Communication Engineering
+        <!-- Home -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">ELECTRONICS & COMMUNICATION ENGINEERING</p>
+
+                <h1>Hello, I'm <span>Khyati Bondada</span></h1>
+
+                <h2>Engineering Ideas into Real-World Solutions</h2>
+
+                <p>
+                    I am a third-year B.Tech ECE student passionate about
+                    embedded systems, IoT, electronics, and practical
+                    engineering solutions.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn">Explore My Projects</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+
+            <!-- The uploaded image is in the repository root -->
+            <div class="hero-image">
+                <div class="profile-placeholder">
+                    <img src="./image.png"
+                         alt="Khyati Bondada profile photo">
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">GET TO KNOW ME</p>
+                <h2>About Me</h2>
+            </div>
+
+            <div class="about-content">
+                <p>
+                    I am a third-year Electronics and Communication
+                    Engineering student at Lendi Institute of Engineering
+                    and Technology.
+                </p>
+
+                <p>
+                    My interests include embedded systems, IoT, electronic
+                    circuit design, and VLSI. I enjoy exploring how
+                    hardware and software can work together to solve
+                    real-world problems.
+                </p>
+
+                <p>
+                    Through academic projects, technical learning, and
+                    industrial exposure, I aim to strengthen my engineering
+                    skills and develop practical solutions.
+                </p>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>8.5</h3>
+                    <p>B.Tech CGPA</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>9.0</h3>
+                    <p>Diploma CGPA</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>6 Months</h3>
+                    <p>Internship Experience</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">MY ACADEMIC JOURNEY</p>
+                <h2>Education</h2>
+            </div>
+
+            <div class="card-grid">
+                <article class="info-card">
+                    <p class="card-label">CURRENTLY PURSUING</p>
+                    <h3>B.Tech in Electronics and Communication Engineering</h3>
+                    <p>Lendi Institute of Engineering and Technology</p>
+                    <p>Third Year</p>
+                    <p class="highlight">CGPA: 8.5</p>
+                </article>
+
+                <article class="info-card">
+                    <p class="card-label">COMPLETED IN 2025</p>
+                    <h3>Diploma in Engineering</h3>
+                    <p>Government Polytechnic, Vijayawada</p>
+                    <p class="highlight">CGPA: 9.0</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">WHAT I WORK WITH</p>
+                <h2>Technical Skills</h2>
+            </div>
+
+            <div class="card-grid">
+                <article class="info-card">
+                    <h3>Embedded Systems</h3>
+                    <div class="tags">
+                        <span>Arduino</span>
+                        <span>ESP32</span>
+                        <span>STM32CubeIDE</span>
+                        <span>Microcontrollers</span>
                     </div>
+                </article>
 
-                    <h1>
-                        Hi, I'm
-                        <span>Khyati Bondada</span>
-                    </h1>
-
-                    <h2>ECE Student | Aspiring Engineer</h2>
-
-                    <p>
-                        I am a third-year Electronics and Communication
-                        Engineering student interested in electronics,
-                        embedded systems, programming, and practical
-                        engineering solutions. I enjoy learning new
-                        technologies and developing projects that address
-                        real-world problems.
-                    </p>
-
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">
-                            Explore My Projects
-                        </a>
-
-                        <a href="#contact" class="btn btn-outline">
-                            Contact Me
-                        </a>
+                <article class="info-card">
+                    <h3>Electronics</h3>
+                    <div class="tags">
+                        <span>Digital Electronics</span>
+                        <span>Basic Circuit Design</span>
+                        <span>Communication Systems</span>
+                        <span>Sensor Interfacing</span>
                     </div>
+                </article>
 
-                    <div class="hero-socials">
-                        <a href="https://github.com/Khyathi-bondada"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            GitHub ↗
-                        </a>
-
-                        <!-- Replace with your actual LinkedIn profile URL -->
-                        <a href="YOUR_LINKEDIN_PROFILE_URL"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            LinkedIn ↗
-                        </a>
+                <article class="info-card">
+                    <h3>IoT and Connectivity</h3>
+                    <div class="tags">
+                        <span>IoT Fundamentals</span>
+                        <span>GPS</span>
+                        <span>GSM</span>
+                        <span>Wireless Communication</span>
                     </div>
-                </div>
+                </article>
 
-                <div class="hero-image">
-                    <div class="profile-placeholder"
-                         role="img"
-                         aria-label="Khyati Bondada profile placeholder">
-                        KB
+                <article class="info-card">
+                    <h3>Programming and Tools</h3>
+                    <div class="tags">
+                        <span>C Programming</span>
+                        <span>Verilog HDL</span>
+                        <span>Linux Fundamentals</span>
                     </div>
-                </div>
+                </article>
             </div>
-        </section>
 
-        <!-- ABOUT -->
-        <section class="about" id="about">
-            <div class="container">
-                <div class="section-title">
-                    <h2>About <span>Me</span></h2>
-                    <p>A curious learner with an interest in technology and practical engineering applications.</p>
-                </div>
-
-                <div class="about-grid">
-                    <div class="about-card">
-                        <h3>Who I Am</h3>
-
-                        <p>
-                            I am Khyati Bondada, currently pursuing my
-                            third year of B.Tech in Electronics and
-                            Communication Engineering at Lendi Institute
-                            of Engineering and Technology.
-                        </p>
-
-                        <p>
-                            My academic journey has helped me explore
-                            electronics, microcontrollers, sensors,
-                            programming, and embedded project development.
-                            I value continuous learning, teamwork,
-                            creativity, and practical problem-solving.
-                        </p>
-
-                        <p>
-                            I am interested in engineering and technology
-                            opportunities where I can apply my knowledge,
-                            contribute to projects, and continue to grow.
-                        </p>
-
-                        <div class="about-details">
-                            <div class="detail-item">
-                                <strong>Name</strong>
-                                <span>Khyati Bondada</span>
-                            </div>
-
-                            <div class="detail-item">
-                                <strong>Field</strong>
-                                <span>Electronics and Communication Engineering</span>
-                            </div>
-
-                            <div class="detail-item">
-                                <strong>Education</strong>
-                                <span>B.Tech, 3rd Year</span>
-                            </div>
-
-                            <div class="detail-item">
-                                <strong>Interests</strong>
-                                <span>Embedded Systems, Electronics, VLSI</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="about-highlights">
-                        <article class="highlight-card">
-                            <div class="icon" aria-hidden="true">⚡</div>
-                            <h4>Electronics</h4>
-                            <p>Interested in electronic circuits, sensors, and practical hardware applications.</p>
-                        </article>
-
-                        <article class="highlight-card">
-                            <div class="icon" aria-hidden="true">⌘</div>
-                            <h4>Embedded Systems</h4>
-                            <p>Exploring microcontrollers, Arduino, ESP32, and sensor-based projects.</p>
-                        </article>
-
-                        <article class="highlight-card">
-                            <div class="icon" aria-hidden="true">◎</div>
-                            <h4>Problem-Solving</h4>
-                            <p>Interested in developing useful technology-based solutions to everyday problems.</p>
-                        </article>
-
-                        <article class="highlight-card">
-                            <div class="icon" aria-hidden="true">✦</div>
-                            <h4>Teamwork</h4>
-                            <p>Building communication, coordination, leadership, and presentation skills.</p>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- EDUCATION -->
-        <section class="education" id="education">
-            <div class="container">
-                <div class="section-title">
-                    <h2>My <span>Education</span></h2>
-                    <p>My academic background and learning journey.</p>
-                </div>
-
-                <div class="timeline">
-                    <article class="timeline-item">
-                        <div class="timeline-dot"></div>
-
-                        <div class="timeline-content">
-                            <h3>Bachelor of Technology — ECE</h3>
-                            <h4>Lendi Institute of Engineering and Technology</h4>
-
-                            <p>
-                                Currently pursuing third year in
-                                Electronics and Communication Engineering.
-                            </p>
-
-                            <div class="timeline-meta">
-                                <span class="skill-tag">Current Student</span>
-                                <span class="skill-tag">CGPA: 8.5</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="timeline-item">
-                        <div class="timeline-dot"></div>
-
-                        <div class="timeline-content">
-                            <h3>Diploma</h3>
-                            <h4>Government Polytechnic, Vijayawada</h4>
-
-                            <p>Completed diploma education in 2025.</p>
-
-                            <div class="timeline-meta">
-                                <span class="skill-tag">Completed: 2025</span>
-                                <span class="skill-tag">CGPA: 9.0</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- SKILLS -->
-        <section class="skills" id="skills">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Technical <span>Skills</span></h2>
-                    <p>Technologies and engineering concepts I have studied or practised.</p>
-                </div>
-
-                <div class="skills-grid">
-                    <article class="skill-card">
-                        <h3>Electronics and Embedded Systems</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Arduino</span>
-                            <span class="skill-tag">ESP32</span>
-                            <span class="skill-tag">Sensors</span>
-                            <span class="skill-tag">Microcontrollers</span>
-                            <span class="skill-tag">Circuit Fundamentals</span>
-                            <span class="skill-tag">Embedded Projects</span>
-                        </div>
-                    </article>
-
-                    <article class="skill-card">
-                        <h3>Programming and Design</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">C Programming</span>
-                            <span class="skill-tag">Verilog HDL</span>
-                            <span class="skill-tag">HTML</span>
-                            <span class="skill-tag">CSS</span>
-                            <span class="skill-tag">Digital Electronics</span>
-                        </div>
-                    </article>
-
-                    <article class="skill-card">
-                        <h3>Professional Skills</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Communication</span>
-                            <span class="skill-tag">Teamwork</span>
-                            <span class="skill-tag">Problem-Solving</span>
-                            <span class="skill-tag">Coordination</span>
-                            <span class="skill-tag">Presentation</span>
-                            <span class="skill-tag">Leadership</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <section class="projects" id="projects">
-            <div class="container">
-                <div class="section-title">
-                    <h2>My <span>Projects</span></h2>
-                    <p>Practical project concepts combining electronics, sensors, microcontrollers, and real-world applications.</p>
-                </div>
-
-                <div class="projects-grid">
-
-                    <article class="project-card">
-                        <div class="project-image" aria-hidden="true">🆘</div>
-                        <div class="project-content">
-                            <h3>Child and Women Safety System Using GPS</h3>
-                            <p>
-                                A safety-oriented prototype using an
-                                emergency push button, GPS, and a
-                                communication module. When activated,
-                                it obtains location information and
-                                sends it to predefined contacts.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">GPS</span>
-                                <span class="tag">GSM</span>
-                                <span class="tag">Embedded Systems</span>
-                                <span class="tag">Emergency Alert</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-image" aria-hidden="true">💡</div>
-                        <div class="project-content">
-                            <h3>Automatic Smart Street Lighting System</h3>
-                            <p>
-                                A smart lighting prototype using ESP32
-                                and IR sensors to adjust lighting based
-                                on nearby movement. With suitable light
-                                sensing and control, it can reduce
-                                unnecessary lighting during daylight
-                                or when a road is unoccupied.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">ESP32</span>
-                                <span class="tag">IR Sensors</span>
-                                <span class="tag">Automation</span>
-                                <span class="tag">Energy Efficiency</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-image" aria-hidden="true">❤️</div>
-                        <div class="project-content">
-                            <h3>CARDIO-SHIELD</h3>
-                            <p>
-                                An embedded health-monitoring prototype
-                                using a pulse sensor, Arduino Uno, GPS,
-                                and GSM. It can send an alert with
-                                location information when the measured
-                                pulse crosses configured thresholds.
-                                It is not a medically validated
-                                diagnostic device.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Arduino Uno</span>
-                                <span class="tag">Pulse Sensor</span>
-                                <span class="tag">GPS</span>
-                                <span class="tag">GSM</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-image" aria-hidden="true">🌿</div>
-                        <div class="project-content">
-                            <h3>Electronic Nose for Food Monitoring</h3>
-                            <p>
-                                A sensor-based monitoring prototype
-                                using MQ-135 and DHT11 to observe
-                                selected gas-related and environmental
-                                conditions around stored food. The
-                                readings can help indicate changes
-                                that need further inspection.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">MQ-135</span>
-                                <span class="tag">DHT11</span>
-                                <span class="tag">Sensors</span>
-                                <span class="tag">Food Monitoring</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-image" aria-hidden="true">⚡</div>
-                        <div class="project-content">
-                            <h3>Electricity Generation Using Footsteps</h3>
-                            <p>
-                                A prototype that uses piezoelectric
-                                sensors to convert pressure from
-                                footsteps into electrical energy.
-                                Suitable rectification and energy
-                                conditioning can help demonstrate
-                                the generated output through LEDs
-                                or an appropriate storage circuit.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Piezoelectric Sensors</span>
-                                <span class="tag">Energy Harvesting</span>
-                                <span class="tag">Arduino</span>
-                                <span class="tag">LEDs</span>
-                            </div>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ACHIEVEMENTS -->
-        <section class="achievements" id="achievements">
-            <div class="container">
-                <div class="section-title">
-                    <h2>My <span>Achievements</span></h2>
-                    <p>Learning milestones and academic participation.</p>
-                </div>
-
-                <div class="achievement-list">
-                    <article class="achievement-item">
-                        <h3>NPTEL Learning</h3>
-                        <p>Completed NPTEL courses in Semiconductor Devices and Cloud Computing.</p>
-                    </article>
-
-                    <article class="achievement-item">
-                        <h3>Technical Activities</h3>
-                        <p>Participated in college quizzes, paper presentations, and other academic events.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- CERTIFICATIONS -->
-        <section class="certifications" id="certifications">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Certifications & <span>Learning</span></h2>
-                    <p>Courses that support my technical learning journey.</p>
-                </div>
-
-                <div class="card-grid">
-                    <article class="info-card">
-                        <h3>Semiconductor Devices</h3>
-                        <p>NPTEL course</p>
-                    </article>
-
-                    <article class="info-card">
-                        <h3>Cloud Computing</h3>
-                        <p>NPTEL course</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- LEADERSHIP -->
-        <section class="projects" id="leadership">
-            <div class="container">
-<div class="section-title">
-                    <h2>Leadership <span>Experience</span></h2>
-                    <p>Taking initiative, working with people, and contributing to campus activities.</p>
-                </div>
-
-                <div class="projects-grid">
-                    <article class="project-card">
-
-                        <div class="project-image" aria-hidden="true">🌟</div>
-
-                        <div class="project-content">
-                            <h3>Joint Secretary — IE Student Chapter</h3>
-
-                            <p>
-                                Serving as Joint Secretary of the IE Student
-                                Chapter at college. This role provides
-                                opportunities to support student activities,
-                                coordinate with fellow students, and
-                                contribute to the organization of technical
-                                events and initiatives.
-                            </p>
-
-                            <div class="project-tags">
-                                <span class="tag">Leadership</span>
-                                <span class="tag">Team Coordination</span>
-                                <span class="tag">Communication</span>
-                                <span class="tag">Event Support</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT — KEEP THIS AS THE FINAL SECTION -->
-        <section class="about" id="contact">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>Contact <span>Me</span></h2>
-                    <p>
-                        Have an opportunity, project idea, or professional
-                        connection in mind? I would be happy to connect.
-                    </p>
-                </div>
-
-                <div class="about-grid">
-                    <div class="about-card">
-                        <h3>Let's Connect</h3>
-
-                        <p>
-                            I am interested in learning, collaborating
-                            on engineering projects, and exploring
-                            opportunities to grow professionally.
-                        </p>
-
-                        <!-- Confirm your email address before publishing -->
-                        <p>
-                            <strong>Email:</strong>
-                            <a href="mailto:bondadakhyati@gmail.com">
-                                bondadakhyati@gmail.com
-                            </a>
-                        </p>
-
-                        <p>
-                            <strong>GitHub:</strong>
-                            <a href="https://github.com/Khyathi-bondada"
-                               target="_blank"
-                               rel="noopener noreferrer">
-                                View My GitHub Profile ↗
-                            </a>
-                        </p>
-
-                        <p>
-                            <strong>LinkedIn:</strong>
-                            <a href="https://www.linkedin.com/"
-                               target="_blank"
-                               rel="noopener noreferrer">
-                                Connect on LinkedIn ↗
-                            </a>
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <p>
-                © 2026 Khyati Bondada. Built with curiosity,
-                creativity, and a passion for engineering.
+            <p class="small-note">
+                Include only skills and tools you can confidently explain
+                in an interview.
             </p>
-        </div>
-    </footer>
+        </section>
 
-</body>
-</html>
+        <!-- Projects -->
+        <section id="projects" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">IDEAS INTO ACTION</p>
+                <h2>Projects</h2>
+                <p>Applying engineering concepts to practical challenges.</p>
+            </div>
+
+            <div class="card-grid">
+                <article class="project-card">
+                    <p class="card-label">SAFETY SYSTEM</p>
+                    <h3>Child and Women Safety System Using GPS</h3>
+                    <p>
+                        A safety-system concept designed to use GPS
+                        location tracking to help share location
+                        information during emergencies.
+                    </p>
+                    <div class="tags">
+                        <span>GPS</span>
+                        <span>Embedded Systems</span>
+                        <span>Safety</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <p class="card-label">SMART AUTOMATION</p>
+                    <h3>Automatic Smart Street Lighting</h3>
+                    <p>
+                        An ESP32-based lighting project concept using
+                        IR sensors for automatic street-light control.
+                    </p>
+                    <div class="tags">
+                        <span>ESP32</span>
+                        <span>IR Sensors</span>
+                        <span>Automation</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <p class="card-label">HEALTH MONITORING</p>
+                    <h3>CARDIO-SHIELD</h3>
+                    <p>
+                        A prototype concept using a pulse sensor,
+                        Arduino Uno, GPS, and GSM for pulse monitoring
+                        and location-based emergency alerts.
+                    </p>
+                    <div class="tags">
+                        <span>Arduino Uno</span>
+                        <span>Pulse Sensor</span>
+                        <span>GPS and GSM</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <p class="card-label">FOOD MONITORING</p>
+                    <h3>Electronic Nose for Food Monitoring</h3>
+                    <p>
+                        A sensor-based concept using MQ-135 and DHT11
+                        to monitor selected air-quality indicators and
+                        environmental conditions around stored food.
+                    </p>
+                    <div class="tags">
+                        <span>MQ-135</span>
+                        <span>DHT11</span>
+                        <span>Monitoring</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <p class="card-label">ENERGY HARVESTING</p>
+                    <h3>Electricity Generation Using Footsteps</h3>
+                    <p>
+                        A project concept using piezoelectric sensors
+                        to convert pressure from footsteps into
+                        electrical energy.
+                    </p>
+                    <div class="tags">
+                        <span>Piezoelectric Sensors</span>
+                        <span>Energy Harvesting</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">CONTINUOUS LEARNING</p>
+                <h2>Certifications & Training</h2>
+            </div>
