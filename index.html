@@ -4,413 +4,930 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Khyathi's engineering portfolio showcasing education, technical skills, projects, training and achievements.">
+  <meta name="description" content="Khyathi Bondada's engineering portfolio showcasing electronics projects, embedded systems, technical skills, education and leadership.">
 
-  <title>Khyathi | Electronics and Communication Engineering</title>
+  <title>Khyathi Bondada | Engineering Portfolio</title>
 
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --blue: #175cd3;
+      --dark-blue: #102344;
+      --text: #293750;
+      --muted: #687790;
+      --light: #f4f7fc;
+      --border: #e1e8f2;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 85px 0;
+    }
+
+    .alternate {
+      background: var(--light);
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 40px;
+    }
+
+    .section-heading h2 {
+      color: var(--dark-blue);
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .section-heading > p:last-child {
+      color: var(--muted);
+    }
+
+    /* Navigation */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--dark-blue);
+      font-size: 25px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 19px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-links .contact-link {
+      color: white;
+      background: var(--blue);
+      padding: 9px 15px;
+      border-radius: 7px;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 90px 0;
+      background:
+        radial-gradient(circle at 85% 15%, #e0ebff, transparent 32%),
+        linear-gradient(120deg, white, #f5f8ff);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .hero h1 {
+      color: var(--dark-blue);
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: 1.13;
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--blue);
+    }
+
+    .hero h2 {
+      color: #3d5272;
+      font-size: clamp(17px, 2vw, 22px);
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .hero-description {
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 26px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 19px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    .primary:hover {
+      background: #1246a8;
+    }
+
+    .secondary {
+      color: var(--blue);
+      border: 1px solid #b9cdf5;
+      background: white;
+    }
+
+    .hero-tags,
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .hero-tags {
+      margin-top: 25px;
+    }
+
+    .tag {
+      display: inline-block;
+      color: #31558d;
+      background: #eaf1ff;
+      border: 1px solid #dce7ff;
+      border-radius: 30px;
+      padding: 5px 11px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .profile-card {
+      text-align: center;
+      padding: 32px 24px;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(20, 48, 90, 0.08);
+    }
+
+    .profile-circle {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, #175cd3, #80aaff);
+      font-size: 38px;
+      font-weight: 800;
+    }
+
+    .profile-card .small-label {
+      color: var(--blue);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      font-weight: 800;
+    }
+
+    .profile-card h3 {
+      color: var(--dark-blue);
+      margin: 8px 0;
+      font-size: 22px;
+    }
+
+    .profile-card > p:last-of-type {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 7px;
+      border-top: 1px solid var(--border);
+      margin-top: 24px;
+      padding-top: 20px;
+    }
+
+    .stats strong {
+      display: block;
+      color: var(--blue);
+      font-size: 24px;
+    }
+
+    .stats span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* General cards */
+
+    .about-card,
+    .education-card,
+    .skill-card,
+    .project-card,
+    .achievement-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .about-card {
+      max-width: 900px;
+      margin: auto;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(20, 48, 90, 0.05);
+    }
+
+    .about-card p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .about-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .education-grid,
+    .skills-grid,
+    .projects-grid,
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .education-card,
+    .skill-card,
+    .project-card {
+      padding: 28px;
+    }
+
+    .education-card:hover,
+    .skill-card:hover,
+    .project-card:hover,
+    .achievement-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(20, 48, 90, 0.09);
+    }
+
+    .card-number {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 8px;
+      background: #eaf1ff;
+      color: var(--blue);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .card-label {
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      margin-bottom: 8px;
+    }
+
+    .education-card h3,
+    .skill-card h3,
+    .project-card h3,
+    .achievement-card h3 {
+      color: var(--dark-blue);
+      font-size: 19px;
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .institution {
+      color: #405675;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .description {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .status {
+      display: inline-block;
+      color: #176746;
+      background: #e5f7ee;
+      border-radius: 25px;
+      padding: 5px 11px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 12px;
+    }
+
+    /* Skills */
+
+    .skill-icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      color: var(--blue);
+      background: #eaf1ff;
+      font-size: 21px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .skill-card ul {
+      list-style: none;
+    }
+
+    .skill-card li {
+      position: relative;
+      padding-left: 22px;
+      margin: 9px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .skill-card li::before {
+      content: "✓";
+      color: var(--blue);
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+    }
+
+    .note {
+      margin-top: 22px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Projects */
+
+    .project-number {
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card .description {
+      flex-grow: 1;
+    }
+
+    .tags {
+      margin-top: 5px;
+    }
+
+    /* Achievements and leadership */
+
+    .achievement-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 23px;
+    }
+
+    .achievement-icon {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 43px;
+      height: 43px;
+      color: var(--blue);
+      background: #eaf1ff;
+      border-radius: 12px;
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .achievement-card h3 {
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .achievement-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Career banner */
+
+    .career {
+      background: linear-gradient(120deg, #123b80, #175cd3);
+      text-align: center;
+      color: white;
+    }
+
+    .career .eyebrow {
+      color: #c9dcff;
+    }
+
+    .career h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.25;
+      margin-bottom: 15px;
+    }
+
+    .career p:not(.eyebrow) {
+      color: #e1ebff;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .light-button {
+      display: inline-block;
+      margin-top: 25px;
+      color: var(--blue);
+      background: white;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-width: 0;
+      padding: 20px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .contact-card:hover {
+      border-color: #9bbaf5;
+      transform: translateY(-3px);
+    }
+
+    .contact-icon {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 43px;
+      height: 43px;
+      background: #eaf1ff;
+      color: var(--blue);
+      border-radius: 11px;
+      font-weight: 800;
+    }
+
+    .contact-card h3 {
+      color: var(--dark-blue);
+      font-size: 15px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    /* Footer */
+
+    footer {
+      background: #0e1e38;
+      color: #d8e2f3;
+      padding: 27px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-logo {
+      color: white;
+    }
+
+    footer p {
+      font-size: 12px;
+    }
+
+    .copyright {
+      color: #aab9d0;
+    }
+
+    /* Responsive layout */
+
+    @media (max-width: 950px) {
+      .hero-grid {
+        gap: 30px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .section {
+        padding: 62px 0;
+      }
+
+      nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 13px 0;
+        gap: 10px;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 10px 14px;
+      }
+
+      .hero {
+        padding: 62px 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .hero-text {
+        text-align: center;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons,
+      .hero-tags {
+        justify-content: center;
+      }
+
+      .profile-card {
+        max-width: 440px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .education-grid,
+      .skills-grid,
+      .projects-grid,
+      .achievements-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        width: 92%;
+      }
+
+      .hero h1 {
+        font-size: 37px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .buttons .button {
+        width: 100%;
+      }
+
+      .education-card,
+      .skill-card,
+      .project-card {
+        padding: 22px;
+      }
+
+      .about-card {
+        padding: 23px;
+      }
+
+      .achievement-card {
+        padding: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- NAVIGATION -->
-  <header class="navbar">
-    <a href="#home" class="logo">Khyathi<span>.</span></a>
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">Khyathi<span>.</span></a>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#contact">Contact</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact" class="contact-link">Contact</a>
+      </div>
     </nav>
   </header>
 
   <main>
 
-    <!-- HOME -->
+    <!-- HERO -->
     <section id="home" class="hero">
+      <div class="container hero-grid">
 
-      <div class="hero-content">
-        <p class="eyebrow">
-          ELECTRONICS & COMMUNICATION ENGINEERING
-        </p>
+        <div class="hero-text">
+          <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
 
-        <h1>Hello, I'm <span>Khyathi</span></h1>
+          <h1>Hi, I'm <span>Khyathi Bondada</span></h1>
 
-        <h2>Electronics and Communication Engineering Student</h2>
+          <h2>Electronics and Communication Engineering Student</h2>
 
-        <p class="hero-text">
-          I am an enthusiastic engineering student interested in technology,
-          software development, embedded systems, electronics and innovative
-          problem-solving. I enjoy learning new skills, working on practical
-          projects and developing solutions to real-world challenges.
-        </p>
+          <p class="hero-description">
+            I am an enthusiastic engineering student interested in
+            electronics, embedded systems, programming, and innovative
+            technology. I enjoy transforming ideas into practical
+            projects, learning new skills, and exploring technology
+            to solve real-world problems.
+          </p>
 
-        <div class="hero-buttons">
-          <a href="#projects" class="btn primary">Explore My Work</a>
-          <a href="#contact" class="btn secondary">Contact Me</a>
+          <div class="buttons">
+            <a href="#projects" class="button primary">Explore My Projects</a>
+            <a href="#contact" class="button secondary">Get in Touch</a>
+          </div>
+
+          <div class="hero-tags">
+            <span class="tag">Electronics</span>
+            <span class="tag">Embedded Systems</span>
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Leadership</span>
+          </div>
         </div>
 
-        <div class="social-links">
-          <a href="https://github.com/Khyathi-bondada"
-             target="_blank" rel="noopener noreferrer">
-            GitHub ↗
-          </a>
+        <div class="profile-card">
+          <div class="profile-circle">KB</div>
+          <p class="small-label">ENGINEERING STUDENT</p>
+          <h3>Learn. Build. Improve.</h3>
+          <p>
+            Exploring technology, developing practical solutions,
+            and growing through continuous learning.
+          </p>
 
-          <a href="https://www.linkedin.com/"
-             target="_blank" rel="noopener noreferrer">
-            LinkedIn ↗
-          </a>
-
-          <a href="mailto:YOUR_EMAIL@example.com">
-            Email ↗
-          </a>
+          <div class="stats">
+            <div>
+              <strong>5</strong>
+              <span>Projects</span>
+            </div>
+            <div>
+              <strong>2</strong>
+              <span>NPTEL Courses</span>
+            </div>
+            <div>
+              <strong>1</strong>
+              <span>Leadership Role</span>
+            </div>
+          </div>
         </div>
+
       </div>
-
-      <div class="hero-card">
-        <div class="profile-circle">K</div>
-        <h3>Future-Ready Engineer</h3>
-        <p>Learn. Create. Innovate. Grow.</p>
-
-        <div class="mini-tags">
-          <span>Electronics</span>
-          <span>Software</span>
-          <span>Embedded Systems</span>
-        </div>
-      </div>
-
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="section">
+      <div class="container">
 
-      <p class="section-label">GET TO KNOW ME</p>
-      <h2 class="section-title">About Me</h2>
+        <div class="section-heading">
+          <p class="eyebrow">GET TO KNOW ME</p>
+          <h2>About Me</h2>
+          <p>A curious learner with an interest in technology and innovation.</p>
+        </div>
 
-      <div class="about-card">
-        <p>
-          I am an Electronics and Communication Engineering student at
-          Lendi Institute of Engineering and Technology, passionate about
-          exploring technology and developing practical engineering solutions.
-        </p>
+        <div class="about-card">
+          <p>
+            I am an Electronics and Communication Engineering student
+            at Lendi Institute of Engineering and Technology, currently
+            pursuing my third year with a CGPA of 8.5. I completed my
+            diploma at Government Polytechnic, Vijayawada, in 2025
+            with a CGPA of 9.0.
+          </p>
 
-        <p>
-          My interests include electronics, embedded systems, programming,
-          digital design and emerging technologies. Through academic projects,
-          industrial training and certifications, I am strengthening my
-          technical knowledge, teamwork and problem-solving abilities.
-          I look forward to applying my skills, learning from industry
-          professionals and contributing to innovative projects across
-          different technology domains.
-        </p>
+          <p>
+            I enjoy exploring how hardware, software, sensors, and
+            communication technologies work together. My project
+            experience includes safety alert systems, smart lighting,
+            heart-rate monitoring prototypes, food-storage monitoring,
+            and footstep-based energy harvesting.
+          </p>
+
+          <p>
+            As Joint Secretary of the IE Student Chapter, I am developing
+            my leadership, teamwork, coordination, and communication
+            abilities. I also participate in college quizzes, paper
+            presentations, and other technical activities.
+          </p>
+
+          <p>
+            My goal is to apply my engineering knowledge, strengthen
+            my technical skills, learn from industry professionals,
+            and contribute to meaningful real-world projects.
+          </p>
+        </div>
+
       </div>
-
     </section>
 
     <!-- EDUCATION -->
     <section id="education" class="section alternate">
+      <div class="container">
 
-      <p class="section-label">MY ACADEMIC JOURNEY</p>
-      <h2 class="section-title">Education</h2>
+        <div class="section-heading">
+          <p class="eyebrow">MY ACADEMIC JOURNEY</p>
+          <h2>Education</h2>
+          <p>Building a strong foundation in electronics and engineering.</p>
+        </div>
 
-      <div class="card-grid">
+        <div class="education-grid">
 
-        <article class="info-card">
-          <span class="card-number">01</span>
+          <article class="education-card">
+            <span class="card-number">01</span>
+            <p class="card-label">UNDERGRADUATE DEGREE</p>
 
-          <h3>
-            B.Tech – Electronics and Communication Engineering
-          </h3>
+            <h3>B.Tech in Electronics and Communication Engineering</h3>
 
-          <p>Lendi Institute of Engineering and Technology</p>
-          <p class="muted">Currently pursuing 3rd year</p>
-          <p class="muted">Expected graduation: [Add year]</p>
-        </article>
+            <p class="institution">
+              Lendi Institute of Engineering and Technology
+            </p>
 
-        <article class="info-card">
-          <span class="card-number">02</span>
+            <p class="description">
+              Currently pursuing the third year of my undergraduate
+              engineering degree, with a focus on technical learning,
+              practical projects, and professional development.
+            </p>
 
-          <h3>Diploma</h3>
+            <p><strong>Current CGPA:</strong> 8.5</p>
+            <span class="status">Currently Pursuing</span>
+          </article>
 
-          <p>Andhra Polytechnic, Kakinada</p>
-          <p class="muted">Branch: [Add diploma branch]</p>
-          <p class="muted">Graduation year: [Add year]</p>
-        </article>
+          <article class="education-card">
+            <span class="card-number">02</span>
+            <p class="card-label">DIPLOMA EDUCATION</p>
 
+            <h3>Diploma in Engineering</h3>
+
+            <p class="institution">
+              Government Polytechnic, Vijayawada
+            </p>
+
+            <p class="description">
+              Completed diploma education in 2025 and progressed
+              to undergraduate engineering through lateral entry.
+            </p>
+
+            <p><strong>Final CGPA:</strong> 9.0</p>
+            <span class="status">Completed in 2025</span>
+          </article>
+
+        </div>
       </div>
     </section>
 
-    <!-- TECHNICAL SKILLS -->
+    <!-- SKILLS -->
     <section id="skills" class="section">
+      <div class="container">
 
-      <p class="section-label">WHAT I CAN DO</p>
-      <h2 class="section-title">Technical Skills</h2>
-
-      <div class="skills-grid">
-
-        <div class="skill-card">
-          <h3>Programming & Digital Design</h3>
-
-          <div class="skill-tags">
-            <span>Verilog HDL</span>
-            <span>Digital Logic Design</span>
-            <span>[Programming Language]</span>
-          </div>
+        <div class="section-heading">
+          <p class="eyebrow">WHAT I AM LEARNING</p>
+          <h2>Technical Skills</h2>
+          <p>Knowledge developed through coursework and hands-on projects.</p>
         </div>
 
-        <div class="skill-card">
-          <h3>Embedded Systems</h3>
+        <div class="skills-grid">
 
-          <div class="skill-tags">
-            <span>Arduino</span>
-            <span>ESP32</span>
-            <span>STM32</span>
-            <span>Sensor Interfacing</span>
-          </div>
-        </div>
+          <article class="skill-card">
+            <div class="skill-icon">⌘</div>
+            <h3>Programming & Digital Electronics</h3>
+            <ul>
+              <li>C programming, if applicable to your experience</li>
+              <li>Digital logic fundamentals</li>
+              <li>Basic problem solving</li>
+              <li>Verilog HDL, if studied or practised</li>
+            </ul>
+          </article>
 
-        <div class="skill-card">
-          <h3>Tools & Technologies</h3>
+          <article class="skill-card">
+            <div class="skill-icon">⚙</div>
+            <h3>Embedded Systems</h3>
+            <ul>
+              <li>Arduino Uno</li>
+              <li>ESP32</li>
+              <li>Microcontroller-based projects</li>
+              <li>Sensor interfacing and prototyping</li>
+            </ul>
+          </article>
 
-          <div class="skill-tags">
-            <span>Linux</span>
-            <span>STM32CubeIDE</span>
-            <span>[Add Software Tools]</span>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <h3>Professional Skills</h3>
-
-          <div class="skill-tags">
-            <span>Problem Solving</span>
-            <span>Teamwork</span>
-            <span>Communication</span>
-            <span>Adaptability</span>
-          </div>
-        </div>
-
-      </div>
-
-      <p class="note">
-        Update this section with the skills and tools you can confidently
-        explain during an interview.
-      </p>
-
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section alternate">
-
-      <p class="section-label">IDEAS INTO APPLICATIONS</p>
-      <h2 class="section-title">Projects</h2>
-
-      <div class="card-grid">
-
-        <article class="project-card">
-          <div class="project-icon">01</div>
-
-          <h3>Smart Water Quality Monitoring System</h3>
-
-          <p>
-            A proposed embedded system for monitoring selected water-quality
-            parameters using sensors and a microcontroller, helping identify
-            changes in water quality.
-          </p>
-
-          <div class="skill-tags">
-            <span>ESP32</span>
-            <span>Sensors</span>
-            <span>IoT</span>
-          </div>
-
-          <p class="muted">
-            Add your actual prototype details and test results.
-          </p>
-        </article>
-
-        <article class="project-card">
-          <div class="project-icon">02</div>
-
-          <h3>Electronic Nose for Storage Monitoring</h3>
-
-          <p>
-            A sensor-based project concept that monitors odour-related changes
-            in storage environments to support early identification of
-            possible spoilage.
-          </p>
-
-          <div class="skill-tags">
-            <span>Gas Sensors</span>
-            <span>Embedded Systems</span>
-            <span>Monitoring</span>
-          </div>
-
-          <p class="muted">
-            Add the components and features you actually implemented.
-          </p>
-        </article>
-
-        <article class="project-card">
-          <div class="project-icon">03</div>
-
-          <h3>Smart Agarbatti Drying and Packaging</h3>
-
-          <p>
-            A solar-powered system concept designed to monitor drying
-            conditions and support weight-based packaging for small
-            agarbatti producers.
-          </p>
-
-          <div class="skill-tags">
-            <span>Solar Energy</span>
-            <span>Sensors</span>
-            <span>Automation</span>
-          </div>
-
-          <p class="muted">
-            Describe your actual prototype status and contribution.
-          </p>
-        </article>
-
-      </div>
-
-      <p class="note">
-        Keep completed projects separate from projects that are still
-        ideas or under development.
-      </p>
-
-    </section>
-
-    <!-- ACHIEVEMENTS -->
-    <section id="achievements" class="section">
-
-      <p class="section-label">MILESTONES & EXPERIENCE</p>
-      <h2 class="section-title">Achievements</h2>
-
-      <div class="achievement-list">
-
-        <article class="achievement-item">
-          <div class="achievement-mark">✓</div>
-
-          <div>
-            <h3>NPTEL Elite Certificate</h3>
-            <p>
-              Recognition for academic learning and course completion.
-              Add the course name.
-            </p>
-          </div>
-        </article>
-
-        <article class="achievement-item">
-          <div class="achievement-mark">✓</div>
-
-          <div>
-            <h3>EduSkills – Cohort 17</h3>
-            <p>
-              Achieved an Outstanding grade in the program.
-            </p>
-          </div>
-        </article>
-
-        <article class="achievement-item">
-          <div class="achievement-mark">✓</div>
-
-          <div>
-            <h3>Industrial Training</h3>
-            <p>
-              Six months of industrial training at Axiom Energy Conversion
-              Ltd., Hyderabad.
-            </p>
-          </div>
-        </article>
-
-        <article class="achievement-item">
-          <div class="achievement-mark">✓</div>
-
-          <div>
-            <h3>School-Level Service Robot Project</h3>
-            <p>
-              Developed a service robot project in 8th class and received
-              appreciation from Krishna Das.
-            </p>
-          </div>
-        </article>
-
-        <article class="achievement-item">
-          <div class="achievement-mark">✓</div>
-
-          <div>
-            <h3>Industrial Visits</h3>
-            <p>
-              Gained exposure to industrial environments through
-              4–5 industrial visits.
-            </p>
-          </div>
-        </article>
-
-      </div>
-
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section contact-section">
-
-      <p class="section-label">LET'S CONNECT</p>
-      <h2 class="section-title">Contact Me</h2>
-
-      <p class="contact-intro">
-        I welcome opportunities to learn, collaborate and contribute
-        to meaningful projects across engineering and technology.
-      </p>
-
-      <div class="contact-grid">
-
-        <a class="contact-card" href="mailto:YOUR_EMAIL@example.com">
-          <span>Email</span>
-          <strong>Send me an email ↗</strong>
-        </a>
-
-        <a class="contact-card"
-           href="https://www.linkedin.com/"
-           target="_blank" rel="noopener noreferrer">
-          <span>LinkedIn</span>
-          <strong>Connect professionally ↗</strong>
-        </a>
-
-        <a class="contact-card"
-           href="https://github.com/Khyathi-bondada"
-           target="_blank" rel="noopener noreferrer">
-          <span>GitHub</span>
-          <strong>Explore my repositories ↗</strong>
-        </a>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>Designed with purpose by Khyathi.</p>
-
-    <p>
-      © <span id="year"></span> |
-      Electronics and Communication Engineering
-    </p>
-
-    <a href="#home">Back to top ↑</a>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
-
-</body>
-</html>
+          <article class="skill-card">
+            <div class="skill-icon">⌁</div>
+            <h3>Sensors & Communication</h3>
+            <ul>
+              <li>GPS and GSM modules</li>
+              <li>
